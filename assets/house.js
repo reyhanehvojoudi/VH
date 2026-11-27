@@ -11,7 +11,7 @@
   video.setAttribute('preload','none');
   const journey=document.getElementById('journey'); let stageMotion=0; const pathMetrics=new WeakMap();
   if(!journey.querySelector('.journey-back')){
-    const back=document.createElement('a');back.className='journey-back';back.href='#intro';back.textContent=fa?'بازگشت به ابتدا':'Back to the beginning';
+    const back=document.createElement('a');back.className='journey-back';back.href='#intro';back.innerHTML='<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H5m6-6-6 6 6 6"/></svg>'+(fa?'بازگشت به ابتدا':'Back to the beginning');
     journey.querySelector('.journey').prepend(back);
   }
   const mast=document.querySelector('.mast'), menu=mast.querySelector('.menu-toggle'), nav=mast.querySelector('nav'), closeButton=nav.querySelector('.menu-close');
