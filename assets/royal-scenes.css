@@ -250,3 +250,63 @@ body.folio #journey .stage-copy p {text-align:justify;text-align-last:center;}
  body.folio main[data-view=calendar] .facts{margin-block:6px;gap:4px;}
  body.folio main[data-view=calendar] .compact-time{width:100%;max-width:100%;}
 }
+
+/* Hero-only editorial panel. Grid overlap reserves the tallest slide without reflow. */
+body.folio #intro.hero.page {height:100%;min-height:0;grid-template-rows:minmax(0,1fr);align-content:stretch;align-items:center;gap:0;overflow:hidden;background:var(--deep);padding-block:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-bottom));}
+body.folio #intro .hero-panel {display:grid;grid-template-rows:minmax(0,1fr) auto auto;gap:10px;width:min(100%,43rem);max-height:100%;min-height:0;padding:clamp(12px,2vw,25px);border:1px solid #c3a36b66;border-radius:2px;background:rgba(7,22,35,.42);text-align:start;}
+body.folio #intro .panel-window {display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto;min-height:0;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;scrollbar-width:thin;}
+body.folio #intro .hero-slide {grid-area:1/1;min-width:0;align-self:start;visibility:hidden;opacity:0;transform:translateY(6px);transition:opacity .38s ease,transform .38s ease;}
+body.folio #intro .hero-slide[aria-hidden=false] {visibility:visible;opacity:1;transform:none;}
+body.folio #intro .hero-slide h2 {margin:0;color:var(--ivory);font:600 clamp(30px,min(4.3vw,7dvh),65px)/1.15 var(--display);text-wrap:balance;}
+html[lang=fa] body.folio #intro .hero-slide h2 {font:700 clamp(27px,min(3.8vw,7dvh),53px)/1.35 var(--display);}
+body.folio #intro .hero-panel .hero-summary {margin:10px 0 0;text-align:start;max-width:none;}
+body.folio #intro .hero-panel .hero-bottom {margin-top:12px;padding-top:10px;max-width:none;}
+body.folio #intro .hero-panel .credibility {grid-template-columns:repeat(2,minmax(0,1fr));}
+body.folio #intro .panel-lines {list-style:none;margin:10px 0 0;padding:0;font:400 clamp(15px,1.3vw,20px)/1.5 var(--sans);color:var(--ivory);}
+body.folio #intro .panel-lines li {padding:5px 0;border-bottom:1px solid #c3a36b45;}
+body.folio #intro .panel-lines li:last-child {border:0;}
+body.folio #intro .panel-scope {margin:8px 0 0;color:var(--gold);font:500 15px/1.4 var(--sans);}
+body.folio #intro .panel-actions {display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;}
+body.folio #intro .panel-cta {display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;font:700 14px/1.4 var(--sans);text-align:center;}
+body.folio #intro .panel-journey {color:var(--ivory);display:inline-flex;align-items:center;min-height:44px;font:500 14px/1.4 var(--sans);text-underline-offset:4px;}
+body.folio #intro .panel-controls {display:grid;grid-template-columns:44px minmax(0,1fr) 44px 44px;align-items:center;gap:8px;border-top:1px solid #c3a36b55;padding-top:6px;}
+body.folio #intro .panel-arrow,body.folio #intro .panel-controls .film-toggle {position:static;inset:auto;width:44px;height:44px;min-height:44px;display:grid;place-items:center;color:var(--gold);border:1px solid #c3a36b88;background:transparent;border-radius:2px;padding:0;}
+body.folio #intro .panel-arrow[aria-disabled=true] {opacity:.45;cursor:default;}
+body.folio #intro .panel-next svg,html[dir=rtl] body.folio #intro .panel-prev svg {transform:rotate(180deg);}
+html[dir=rtl] body.folio #intro .panel-next svg {transform:none;}
+body.folio #intro .panel-position {display:grid;gap:5px;justify-items:center;font:500 13px/1.2 var(--sans);color:var(--ivory);}
+body.folio #intro .panel-track {width:100%;height:2px;background:#c3a36b55;}
+body.folio #intro .panel-track span {display:block;height:100%;width:var(--panel-progress,25%);background:var(--gold);transition:width .38s ease;}
+body.folio #intro .hero-panel :focus-visible {outline:2px solid var(--gold);outline-offset:-2px;}
+body.folio #intro .panel-controls .film-toggle[hidden] {display:none;}
+@media(max-width:700px) and (orientation:portrait){
+ body.folio #intro.hero.page {padding-inline:max(10px,env(safe-area-inset-left)) max(10px,env(safe-area-inset-right));background:var(--deep);}
+ body.folio #intro .hero-panel {width:100%;gap:7px;padding:12px;background:rgba(7,22,35,.52);}
+ body.folio #intro .film-frame::after,html[dir=rtl] body.folio #intro .film-frame::after {background:linear-gradient(180deg,#071623a6,#071623b8 52%,#071623a6);}
+ body.folio #intro .hero-slide h2 {font-size:clamp(28px,8vw,40px);}
+ html[lang=fa] body.folio #intro .hero-slide h2 {font-size:clamp(25px,7vw,34px);}
+ body.folio #intro .hero-panel .hero-summary {line-height:1.5;}
+ body.folio #intro .panel-lines li {padding:4px 0;}
+ body.folio #intro .panel-actions {gap:0 8px;}
+ body.folio #intro .panel-cta {padding-inline:9px;}
+}
+@media(orientation:landscape) and (max-height:500px){body.folio #intro.hero.page{padding:4px max(12px,env(safe-area-inset-right)) 4px max(12px,env(safe-area-inset-left));}body.folio #intro .hero-panel{width:min(100%,54rem);gap:3px;padding:8px 12px;}body.folio #intro .panel-lines{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px;}body.folio #intro .hero-panel .hero-bottom{margin-top:5px;padding-top:4px;}body.folio #intro .panel-controls{padding-top:3px;}body.folio #intro .hero-panel .hero-summary{margin-top:5px;}}
+@media(prefers-reduced-motion:reduce){body.folio #intro .hero-slide,body.folio #intro .panel-track span{transition:none;}body.folio #intro .film-toggle{display:none;}}
+/* Poster-only fallback; no inactive controls when JavaScript is unavailable. */
+html:not(.vh-js) body.folio #intro .panel-controls{display:none;}
+/* Smallest corrections for undersized existing controls and narrow RTL columns. */
+body.folio .header-consult,body.folio .language-control,body.folio .mast nav .nav-cta{min-height:44px;}
+body.folio .language-control{min-width:44px;justify-content:center;}
+@media(max-width:700px){
+ body.folio .mast-inner{grid-template-columns:44px minmax(0,1fr) auto;padding-left:max(6px,env(safe-area-inset-left));padding-right:max(6px,env(safe-area-inset-right));}
+ body.folio #journey .stage-copy p,html[lang=fa] body.folio .side-intro>p:not(.kicker),html[lang=fa] body.folio .privacy p{text-align:start;text-align-last:start;}
+ body.folio #journey .journey-back,body.folio #journey .journey-pause{min-height:44px;}
+ body.folio #journey .stage-detail{grid-template-columns:44px minmax(0,1fr) 44px;}
+ body.folio #journey .stage-detail .arrow{width:44px;height:44px;min-width:44px;min-height:44px;}
+ body.folio main[data-view=contact] .contact-icon h2{white-space:normal;text-wrap:wrap;overflow-wrap:break-word;}
+}
+@media(orientation:landscape){body.folio .mast-inner{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));}}
+
+body.folio #intro .panel-live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+body.folio #intro .panel-controls:has(.film-toggle[hidden]){grid-template-columns:44px minmax(0,1fr) 44px;}
+@media(min-width:701px) and (max-width:1050px){body.folio #intro .hero-panel{background:rgba(7,22,35,.70);}}

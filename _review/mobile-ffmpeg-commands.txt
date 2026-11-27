@@ -1,0 +1,10 @@
+Run in assets/media with the original IMG_7231.MP4 at the indicated path. Replace /mnt/data/ with your local source path if necessary.
+
+ffmpeg -hide_banner -loglevel error -y -i /mnt/data/IMG_7231.MP4 -vf 'fps=24,fade=t=in:st=0:d=0.35,fade=t=out:st=23.65:d=0.35' -an -c:v libx264 -preset medium -b:v 720k -maxrate 1050k -bufsize 1440k -pix_fmt yuv420p -movflags +faststart -threads 3 hero-portrait.mp4
+
+ffmpeg -hide_banner -loglevel error -y -i /mnt/data/IMG_7231.MP4 -vf 'fps=24,fade=t=in:st=0:d=0.35,fade=t=out:st=23.65:d=0.35' -an -c:v libvpx-vp9 -b:v 700k -maxrate 1000k -bufsize 1400k -deadline good -cpu-used 5 -row-mt 1 -threads 4 -pix_fmt yuv420p intro-portrait.webm
+
+ffmpeg -hide_banner -loglevel error -y -ss 4 -i /mnt/data/IMG_7231.MP4 -frames:v 1 -c:v libwebp -quality 72 hero-portrait-poster.webp
+
+Final bytes: hero-portrait.mp4 2383910; intro-portrait.webm 1854347; hero-portrait-poster.webp 23818.
+720x1280 native source retained; fps 30 to 24; no crop, scale or audio; 0.35s fades to/from black.

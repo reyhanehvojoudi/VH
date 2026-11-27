@@ -1,0 +1,10 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');const s=fs.readFileSync(require('path').join(__dirname,'../assets/house.js'),'utf8');const block=s.slice(s.indexOf('  const panel=home.querySelector'),s.indexOf('  // The exact cubic endpoints'));
+for(const fa of [true,false]){
+ const elem=()=>({events:{},attrs:{},style:{setProperty(k,v){this[k]=v}},setAttribute(k,v){this.attrs[k]=v},addEventListener(k,v){this.events[k]=v},querySelector(){return {textContent:'Headline'}}});
+ const slides=Array.from({length:4},elem),win=elem(),prev=elem(),next=elem(),count=elem(),live=elem(),panel=elem(),document=elem();panel.querySelectorAll=()=>slides;panel.querySelector=k=>({'\.panel-window':win,'\.panel-prev':prev,'\.panel-next':next,'\.panel-count':count,'\.panel-live':live})[k];document.body={classList:{contains:()=>false}};
+ const ctx={fa,home:{querySelector:()=>panel},document,view:'home',journey:{contains:()=>false},dialog:{open:false},mast:{classList:{contains:()=>false}}};vm.createContext(ctx);vm.runInContext(block,ctx);
+ const expected=n=>fa?['','۰۱','۰۲','۰۳','۰۴'][n]+' / ۰۴':`0${n} / 04`;
+ const key=k=>document.events.keydown({key:k,target:{},preventDefault(){}});
+ const swipe=dx=>{win.events.touchstart({touches:[{clientX:100,clientY:100}]});win.events.touchend({changedTouches:[{clientX:100+dx,clientY:100}],stopPropagation(){}})};
+ next.events.click();assert.equal(count.textContent,expected(2));key(fa?'ArrowLeft':'ArrowRight');assert.equal(count.textContent,expected(3));swipe(fa?-80:80);assert.equal(count.textContent,expected(4));next.events.click();assert.equal(count.textContent,expected(4));assert.equal(next.attrs['aria-disabled'],'true');assert(slides.slice(0,3).every(x=>x.inert));assert(!slides[3].inert);prev.events.click();key(fa?'ArrowRight':'ArrowLeft');swipe(fa?80:-80);assert.equal(count.textContent,expected(1));assert.equal(prev.attrs['aria-disabled'],'true');console.log(fa?'FA':'EN','panel state, button, keyboard, swipe, ends, focus isolation PASS (mock DOM)');
+}

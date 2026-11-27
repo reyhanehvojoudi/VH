@@ -4,7 +4,7 @@
   const dialog=document.getElementById('language-dialog'), dismiss=document.getElementById('dismiss-language');
   const lang=document.documentElement.lang, fa=lang==='fa', reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const video=document.getElementById('intro-film'), toggle=document.getElementById('film-toggle');
-  window.addEventListener('load',()=>{clearTimeout(filmWarmupTimer);filmWarmupTimer=setTimeout(updateFilm,650);},{once:true});
+  window.addEventListener('load',()=>{clearTimeout(filmWarmupTimer);filmWarmupTimer=setTimeout(()=>{filmReady=true;updateFilm();},650);},{once:true});
   const blocked=()=>reduced.matches||navigator.connection?.saveData||['slow-2g','2g'].includes(navigator.connection?.effectiveType);
   // Keep the first paint light: the poster is shown immediately and the
   // large film is fetched shortly after the interface becomes usable.
@@ -23,7 +23,7 @@
   const cache=new Map([['home',home]]);
   const aliases={method:'journey',approach:'journey',pathways:'journey',services:'journey',people:'founders',about:'founders',consultation:'consult',terms:'intro'};
   let view='', stage=0, bookingModule, chosen=false, switching=false, manualPause=false, animation;
-  let filmWarmupTimer=0;
+  let filmWarmupTimer=0, filmReady=false;
   const read=k=>{try{return sessionStorage.getItem(k);}catch(_){return null;}};
   function write(k,v){try{if(v===null)sessionStorage.removeItem(k);else sessionStorage.setItem(k,v);}catch(_){}}
   function booking(){return bookingModule ||= import('./booking.js?v=20261127-r2').catch(err=>{bookingModule=null;throw err;});}
@@ -32,24 +32,34 @@
     toggle.setAttribute('aria-label',label);toggle.title=label;
     toggle.dataset.playing=String(!video.paused);toggle.firstElementChild.textContent='';
   }
-  const portraitMedia=matchMedia('(max-width:700px) and (orientation:portrait)');
+  const portraitMedia=window.vhPortraitMedia||matchMedia('(max-width:700px) and (orientation:portrait)');
   let sourceAttempt=0, attemptId=0;
-  function updatePoster(){video.poster=portraitMedia.matches?video.dataset.posterSmall:video.dataset.poster;}
-  function sourceList(){return [portraitMedia.matches?video.dataset.srcSmall:video.dataset.src, 'assets/media/intro-'+(portraitMedia.matches?'portrait':'desktop')+'.webm'];}
-  function setSource(index){const src=sourceList()[index];if(!src)return false;sourceAttempt=index;video.classList.remove('playing');video.defaultMuted=true;video.muted=true;video.playsInline=true;video.autoplay=false;video.src=src;video.load();return true;}
-  function allowed(){return chosen&&!blocked()&&!document.hidden&&view==='home'&&!document.body.classList.contains('journey-scene')&&!manualPause&&!dialog.open;}
+  function updatePoster(){/* Responsive picture provides the poster without a duplicate video poster request. */}
+  function sourceList(){return window.vhSelectedHero||[portraitMedia.matches?video.dataset.srcSmall:video.dataset.src, 'assets/media/intro-'+(portraitMedia.matches?'portrait.webm?v=20261127-r3':'desktop.webm')];}
+  function setSource(index){const src=sourceList()[index];if(!src)return false;sourceAttempt=index;video.classList.remove('playing');video.defaultMuted=true;video.muted=true;video.playsInline=true;video.autoplay=true;video.src=src;video.load();return true;}
+  function allowed(){return filmReady&&chosen&&!blocked()&&!document.hidden&&view==='home'&&!document.body.classList.contains('journey-scene')&&!manualPause&&!dialog.open;}
   function stopFilm(unload=false){attemptId++;video.pause();video.classList.remove('playing');if(unload&&video.hasAttribute('src')){video.removeAttribute('src');video.load();sourceAttempt=0;}filmButton();}
-  function tryPlay(manual=false){if(!manual&&!allowed())return;const id=++attemptId;if(!video.hasAttribute('src'))setSource(0);video.muted=true;video.play().catch(err=>{if(id!==attemptId)return;if(err.name==='NotSupportedError'&&sourceAttempt===0&&setSource(1)){tryPlay(manual);return;}video.classList.remove('playing');filmButton();});}
+  function tryPlay(manual=false){if(blocked()||(!manual&&!allowed()))return;const id=++attemptId;if(!video.hasAttribute('src'))setSource(0);video.muted=true;video.play().catch(err=>{if(id!==attemptId)return;if(err.name==='NotSupportedError'&&sourceAttempt===0&&setSource(1)){tryPlay(manual);return;}video.classList.remove('playing');filmButton();});}
   function playVideo(manual=false){tryPlay(manual);}
-  function updateFilm(){if(!allowed()){stopFilm(blocked());return;}if(video.paused)playVideo();}
+  function updateFilm(){toggle.hidden=!!blocked();if(!allowed()){stopFilm(blocked());return;}if(video.paused)playVideo();}
   updatePoster();portraitMedia.addEventListener('change',()=>{updatePoster();stopFilm(true);updateFilm();});
-  toggle.addEventListener('click',()=>{if(video.paused){manualPause=false;playVideo(true);}else{manualPause=true;stopFilm();}});
+  toggle.addEventListener('click',()=>{if(video.paused&&!blocked()){manualPause=false;playVideo(true);}else{manualPause=true;stopFilm();}});
   video.addEventListener('playing',()=>video.classList.add('playing'));
   video.addEventListener('error',()=>{video.classList.remove('playing');if(allowed()&&video.hasAttribute('src')&&sourceAttempt===0&&setSource(1))tryPlay();else filmButton();});
   for(const event of ['play','pause'])video.addEventListener(event,filmButton);
   document.addEventListener('visibilitychange',updateFilm);
   reduced.addEventListener('change',updateFilm);
   navigator.connection?.addEventListener?.('change',updateFilm);
+  const panel=home.querySelector('.hero-panel'), slides=[...panel.querySelectorAll('.hero-slide')], win=panel.querySelector('.panel-window'), prev=panel.querySelector('.panel-prev'), next=panel.querySelector('.panel-next'), count=panel.querySelector('.panel-count');
+  let active=0, start=null;
+  const digits=n=>String(n).padStart(2,'0').replace(/\d/g,d=>fa?'۰۱۲۳۴۵۶۷۸۹'[d]:d);
+  function showPanel(n){n=Math.max(0,Math.min(slides.length-1,n));if(n===active)return;active=n;slides.forEach((s,i)=>{s.inert=i!==n;s.setAttribute('aria-hidden',String(i!==n));});win.scrollTop=0;count.textContent=digits(n+1)+' / '+digits(slides.length);panel.querySelector('.panel-live').textContent=count.textContent+' — '+slides[n].querySelector('h1,h2').textContent;panel.style.setProperty('--panel-progress',((n+1)/slides.length*100)+'%');prev.setAttribute('aria-disabled',String(n===0));next.setAttribute('aria-disabled',String(n===slides.length-1));}
+  prev.addEventListener('click',()=>showPanel(active-1));next.addEventListener('click',()=>showPanel(active+1));
+  document.addEventListener('keydown',e=>{if(view!=='home'||journey.contains(e.target)||document.body.classList.contains('journey-scene')||dialog.open||mast.classList.contains('menu-open')||e.altKey||e.ctrlKey||e.metaKey||e.target.closest?.('input,textarea,select,[contenteditable]')||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();showPanel(active+(e.key===(fa?'ArrowLeft':'ArrowRight')?1:-1));});
+  win.addEventListener('touchstart',e=>{if(e.touches.length===1)start=[e.touches[0].clientX,e.touches[0].clientY];},{passive:true});
+  win.addEventListener('wheel',e=>{if(win.scrollHeight>win.clientHeight+1)e.stopPropagation();},{passive:true});
+  win.addEventListener('touchcancel',()=>start=null,{passive:true});
+  win.addEventListener('touchend',e=>{if(!start)return;const dx=e.changedTouches[0].clientX-start[0],dy=e.changedTouches[0].clientY-start[1];start=null;if(win.scrollHeight>win.clientHeight+1&&Math.abs(dy)>Math.abs(dx)){e.stopPropagation();return;}if(Math.abs(dx)>45&&Math.abs(dx)>1.5*Math.abs(dy))showPanel(active+(dx*(fa?-1:1)>0?1:-1));},{passive:true});
   // The exact cubic endpoints define both the milestone coordinates and the painted segments.
   function metricsFor(p){let m=pathMetrics.get(p);if(m)return m;const svg=p.ownerSVGElement,box=svg.viewBox.baseVal,nums=p.getAttribute('d').match(/-?\d+(?:\.\d+)?/g).map(Number);let x=nums[0],y=nums[1];const points=[[x,y]],segments=[];for(let j=2;j<nums.length;j+=6){const seg=nums.slice(j,j+6),line=document.createElementNS('http://www.w3.org/2000/svg','path');line.setAttribute('class','route-segment');line.setAttribute('d',`M${x} ${y} C${seg.join(' ')}`);line.setAttribute('visibility','hidden');svg.insertBefore(line,svg.querySelector('.route-light'));segments.push({line,length:line.getTotalLength()});[x,y]=seg.slice(4);points.push([x,y]);}const mobile=svg.classList.contains('mobile');journey.querySelectorAll('[data-stage]').forEach((node,i)=>{node.style.setProperty(mobile?'--mx':'--x',100*(points[i][0]-box.x)/box.width+'%');node.style.setProperty(mobile?'--my':'--y',100*(points[i][1]-box.y)/box.height+'%');});m={points,segments};pathMetrics.set(p,m);return m;}
   function drawPath(fraction){for(const svg of journey.querySelectorAll('.royal-route')){if(!svg.isConnected||getComputedStyle(svg).display==='none'||!svg.getBoundingClientRect().width)continue;const p=svg.querySelector('.route-fill'),light=svg.querySelector('.route-light'),m=metricsFor(p),current=Math.min(5,Math.max(0,fraction)),lo=Math.floor(current),t=current-lo;for(const [i,{line,length}] of m.segments.entries()){if(i<lo){line.setAttribute('visibility','visible');line.style.strokeDasharray='none';line.style.strokeDashoffset='0';}else if(i===lo&&t>0){line.setAttribute('visibility','visible');line.style.strokeDasharray=`${length} ${length}`;line.style.strokeDashoffset=String(length*(1-t));}else line.setAttribute('visibility','hidden');}const pt=t>0?m.segments[lo].line.getPointAtLength(m.segments[lo].length*t):{x:m.points[lo][0],y:m.points[lo][1]};light.setAttribute('cx',pt.x);light.setAttribute('cy',pt.y);svg.classList.add('ready');}}
@@ -167,7 +177,7 @@
     chosen=true;document.documentElement.classList.remove('language-entry');document.documentElement.classList.add('language-chosen');
     filmButton();
     clearTimeout(filmWarmupTimer);
-    filmWarmupTimer=setTimeout(()=>{if(chosen && !document.hidden)updateFilm();},650);
+    filmWarmupTimer=setTimeout(()=>{filmReady=true;if(chosen && !document.hidden)updateFilm();},650);
   }
   function openChooser(first) {
     closeMenu();dismiss.hidden=first;dialog.classList.remove('leaving');if(!dialog.open)dialog.showModal();video.pause();
