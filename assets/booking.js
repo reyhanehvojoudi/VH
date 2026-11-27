@@ -170,7 +170,7 @@ function draw(message='') {
       node.dataset.time=start;node.setAttribute('aria-pressed',String(start===selectedTime));list.append(node);
     }
     times.append(list);
-    const confirm=button(tx('Confirm this consultation','تأیید و رزرو جلسه'),'btn solid',confirmTime);
+    const confirm=button(tx('Confirm booking','تأیید رزرو'),'btn solid',confirmTime);
     confirm.id='confirm-time';confirm.disabled=selectedTime===null;
     if(selectedTime!==null){const localZone=Intl.DateTimeFormat().resolvedOptions().timeZone;if(localZone&&localZone!=='Asia/Tehran'){const local=new Intl.DateTimeFormat(fa?'fa-IR-u-ca-persian':'en-GB',{dateStyle:'medium',timeStyle:'short',timeZone:localZone}).format(selectedTime);times.append(el('p','subtle',tx('Your device time: ','به وقت دستگاه شما: ')+local));}}times.append(confirm);
   } else times.append(el('p','subtle',tx('Select a highlighted date to see its times.','برای دیدن ساعت‌ها، یکی از روزهای مشخص‌شده را انتخاب کنید.')));
@@ -197,8 +197,8 @@ async function confirmTime() {
 function showConfirmation(box,booking) {
   const section=box.closest('section');
   const pending=booking.status==='Reserved', imported=booking.status==='Imported';
-  section.querySelector('h1').textContent=pending?tx('Your time is reserved.','وقت شما نگه داشته شد.'):tx('Your consultation is booked.','جلسهٔ مشاورهٔ شما رزرو شد.');
-  section.querySelector('#calendar-intro').textContent=tx('Use the private link in your email to return to these details.','با پیوند اختصاصی در ایمیلتان می‌توانید دوباره جزئیات جلسه را ببینید.');
+  section.querySelector('h1').textContent=pending?tx('Your time is reserved.','وقت شما موقتاً رزرو شد.'):tx('Your initial consultation is booked.','مشاوره اولیه شما رزرو شد.');
+  section.querySelector('#calendar-intro').textContent=tx('Use the private link in your email to return to these details.','جزئیات جلسه از طریق پیوند اختصاصی ایمیل در دسترس است.');
   const heading=el('h2','',pending?tx('Preparing your Google Meet','در حال آماده‌سازی گوگل میت'):tx('Booking confirmed','تأیید رزرو'));heading.dataset.confirmation='';heading.tabIndex=-1;
   const time=el('p','confirmation-date',longDate(booking.start,lang)+' · '+clock(booking.start,lang)+' '+tx('(Tehran)','(به وقت تهران)'));
   const code=el('bdi','',booking.ref),reference=el('p','subtle',tx('Booking reference ','شناسهٔ رزرو '));code.dir='ltr';reference.append(code);
@@ -222,7 +222,7 @@ function downloadEvent({start,end,ref,meet,icalUid}) {
   const stamp=n=>new Date(n).toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
   const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Vellum House//Consultations//EN','CALSCALE:GREGORIAN','BEGIN:VEVENT',
     'UID:'+(icalUid || start+'-'+ref+'@vhouse.ir'),'DTSTAMP:'+stamp(Date.now()),'DTSTART:'+stamp(start),'DTEND:'+stamp(end),
-    'SUMMARY:Vellum House consultation','LOCATION:'+(meet || 'Online'),'END:VEVENT','END:VCALENDAR',''];
+    'SUMMARY:Vellum House initial consultation','LOCATION:'+(meet || 'Online'),'END:VEVENT','END:VCALENDAR',''];
   const url=URL.createObjectURL(new Blob([lines.join('\r\n')],{type:'text/calendar;charset=utf-8'})),a=el('a');
   a.href=url;a.download='Vellum-House-consultation.ics';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);
 }

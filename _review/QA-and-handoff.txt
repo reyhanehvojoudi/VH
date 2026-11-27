@@ -1,0 +1,47 @@
+VELLUM HOUSE | CONTENT-ONLY REVISION — 27 NOV 2026
+Source: Vellum-House-Refined(1).zip; approved strategy in preceding conversation.
+No separate screenshots were mounted with this request; no pixel comparison was possible.
+
+Static checks: PASS
+- 42 original files byte-for-byte unchanged; 26 files edited; no site files added or deleted.
+- All HTML tag structure, attribute sets, non-copy attributes, links, form values and inline scripts/styles unchanged. Six stage labels and order unchanged.
+- CSS, fonts, images, video, configuration and calendar API transport unchanged.
+- JS syntax check passed for all edited scripts; changes limited to displayed strings and the Persian grade suffix text selection.
+- 115 logged text/metadata changes; 258 unchanged nonblank HTML text nodes (kept). The log omits unchanged lines in accordance with instructions.
+- Site source bytes: 10,508,898 before, 10,507,802 after (-1,096 bytes). This is source size, not a network performance measurement.
+- Persian hero numbers retain existing bdi dir=ltr, so the plus sign is isolated. Visual rendering not certified.
+- English meta description is 127 characters.
+- The hero Journey button remains a navigation link, labelled The Journey / مسیر همراهی; actual booking entry links use the approved consultation CTA. No link destination altered.
+- Booking duration is dynamically supplied by the backend; admin UI has a 30-minute default, not proof of actual configured duration. No duration hardcoded into copy.
+
+Viewport QA: NOT VERIFIED (acceptance check does not pass)
+Chromium returned ERR_BLOCKED_BY_ADMINISTRATOR for local and intercepted test URLs. No browser screenshots or actual layout measurements could be obtained. Do not interpret static checks as a visual pass.
+Page / scene | 320x568 | 360x640 | 1440x900 (desktop)
+Hero | Not verified | Not verified | Not verified
+Journey (all six stages) | Not verified | Not verified | Not verified
+About / founder biographies | Not verified | Not verified | Not verified
+Contact | Not verified | Not verified | Not verified
+Booking form (all existing steps) | Not verified | Not verified | Not verified
+Calendar / confirmation | Not verified | Not verified | Not verified
+Language chooser | Not verified | Not verified | Not verified
+Privacy details / 404 / admin | Not verified | Not verified | Not verified
+Redirect aliases | Static destination check passed; rendering not verified
+
+Backend: No server source, email templates, or reminder templates present. The archive is a static frontend with a remote Apps Script endpoint; no backend or live booking call was made. Local booking messages and calendar-event text were edited only where necessary. No real enquiries or appointments created.
+
+Needs your confirmation (before publishing):
+1. Existing tutors: booking reassurance provisionally included as instructed; confirm collaboration policy.
+2. Duration: actual admin-configured duration; remains dynamic, not hardcoded.
+3. Grade range: existing form covers elementary through graduate study; no eligibility claims or option changes made.
+4. Numbers: confirm collective team attribution and counting method. Labels assume team-level experience/students, not Vellum House enrolments; retain only if supported.
+5. No-obligation consultation and parent attendance policy: existing under-18 rule retained; confirm whether all consultations require a parent.
+6. Server email/reminder templates and actual browser fit require access to backend source and a functioning browser environment.
+
+Optional bigger ideas, not built:
+- Four-scene homepage proposed in strategy; not built.
+- An anonymised sample assessment, roadmap and monthly report.
+- Verified case studies and parent testimonials.
+- A future accessibility/viewport remediation pass if overflow is found.
+- Consistent backend email and reminder copy once source is available.
+
+No CSS or markup structure changes made. The review folder contains documentation only and is not loaded by the site. Remove it before deployment if desired.

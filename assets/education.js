@@ -11,7 +11,7 @@
         ['grade-'+(first+i),choice('Grade ','پایهٔ ')+n(first+i)]);
     }
     if (level === 'grad') return [['masters',choice('Master’s','کارشناسی ارشد')],['doctoral',choice('Doctorate','دکتری')],['postgrad-other',choice('Other graduate programme','سایر دوره‌های تحصیلات تکمیلی')]];
-    if (level === 'undergrad' || level === 'college') return [1,2,3,4,5,6].map(i=>['year-'+i,choice('Year ','سال ')+n(i)+(i===6?'+':'')]);
+    if (level === 'undergrad' || level === 'college') return [1,2,3,4,5,6].map(i=>['year-'+i,choice('Year ','سال ')+n(i)+(i===6?(fa?' و بالاتر':'+'):'')]);
     return [];
   }
   function sync(form, selected='') {

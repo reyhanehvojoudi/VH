@@ -1,0 +1,116 @@
+﻿Page,Element,Language,Before,After,Reason,File
+Shared / standalone,p,فارسی,صفحه مورد نظر پیدا نشد.,صفحه موردنظر پیدا نشد.,Persian typography,404.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,about-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,about.html
+Header,small,English,Academic Management,Private Academic Management Office,Consistent category in staff header,admin.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,approach-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,approach.html
+Booking states,Dynamic label,English,Your consultation is booked.,Your initial consultation is booked.,Consistent consultation wording,assets/booking.js
+Booking states,Dynamic label,فارسی,جلسهٔ مشاورهٔ شما رزرو شد.,مشاوره اولیه شما رزرو شد.,Consistent consultation wording,assets/booking.js
+Booking states,Dynamic label,English,Confirm this consultation,Confirm booking,Consistent consultation wording,assets/booking.js
+Booking states,Dynamic label,فارسی,تأیید و رزرو جلسه,تأیید رزرو,Consistent consultation wording,assets/booking.js
+Booking states,Dynamic label,فارسی,وقت شما نگه داشته شد.,وقت شما موقتاً رزرو شد.,Positioning / clarity,assets/booking.js
+Booking states,Dynamic label,فارسی,با پیوند اختصاصی در ایمیلتان می‌توانید دوباره جزئیات جلسه را ببینید.,جزئیات جلسه از طریق پیوند اختصاصی ایمیل در دسترس است.,Positioning / clarity,assets/booking.js
+Booking states,Dynamic label,English,Vellum House consultation,Vellum House initial consultation,Consistent consultation wording,assets/booking.js
+Booking grade options,Dynamic label,English,(i===6?'+':''),(i===6?(fa?' و بالاتر':'+'):''),Persian typography,assets/education.js
+Shared / booking,Dynamic label,English,"['Home','Approach','About Us','Consultation']","['Home','The Journey','About Us','Consultation']",Positioning / clarity,assets/house.js
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,consultation-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,consultation.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,contact-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,contact.html
+Metadata,meta @content,English,"Personal academic management, from talent assessment and mentoring to international competitions, university admissions and scholarships.",Private academic management from assessment to university admission and scholarship planning. Book a free initial consultation.,SEO / share preview,en.html
+Metadata,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview; Positioning / clarity,en.html
+Metadata,meta @content,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview; Positioning / clarity,en.html
+Metadata,meta @content,English,"Personal academic management, from talent assessment and mentoring to international competitions, university admissions and scholarships.",Private academic management from assessment to university admission and scholarship planning. Book a free initial consultation.,SEO / share preview,en.html
+Header,small,English,Academic Management,Private Academic Management Office,Evidence / attribution; Positioning / clarity,en.html
+Navigation,a,English,Request a Consultation,Book a free initial consultation,Consistent consultation wording,en.html
+Navigation,a btn gold nav-cta,English,Request a Free Consultation,Book a free initial consultation,Consistent consultation wording,en.html
+Header,a @aria-label,English,Book a free online consultation,Book a free initial consultation,Consistent consultation wording,en.html
+Header,a header-consult,English,Book your free consultation now,Book a free initial consultation,Consistent consultation wording,en.html
+Home,h1,English,Private academic management for your family,"We manage your child's education, from assessment to university.",Positioning / clarity,en.html
+Home,p hero-summary,English,"When classes, competitions and university plans are chosen separately, opportunities can slip by. Vellum House brings them into one personal plan, from discovering your child’s strengths to preparing for admission and scholarships.","Vellum House is a private academic management office. We build one roadmap around your child’s abilities, interests and goals.",Positioning / clarity,en.html
+Home,a explore btn gold,English,Explore the student journey,The Journey,Preserve existing navigation destination,en.html
+Home,span,English,Years of Educational Expertise,Years of team expertise,Evidence / attribution,en.html
+Home,span,English,Students Worldwide,Students supported by our team,Evidence / attribution,en.html
+Home,span,English,Personalized Academic Management,Academic management scope,Evidence / attribution,en.html
+Journey,p,English,Select a stage to explore your path.,Classes and academic decisions follow one plan. Select a stage.,Concrete management deliverable,en.html
+Journey,h2,English,Every journey begins with understanding.,Understanding before planning,Concrete management deliverable,en.html
+Journey,p,English,"We begin by getting to know you — your background, interests, circumstances and ambitions. Together, we explore where you are today and where you aspire to be.","We speak with the student and family to understand their academic background, interests, circumstances and goals.",Concrete management deliverable,en.html
+Journey,h2,English,Uncovering your unique potential.,Understanding strengths and learning needs,Concrete management deliverable,en.html
+Journey,p,English,"Through a comprehensive, personalized assessment, we identify your talents, strengths, learning patterns and areas for development. We look beyond grades to understand how you think, learn and grow.","Our assessment looks beyond grades to identify the student’s strengths, learning patterns and areas for development.",Concrete management deliverable,en.html
+Journey,h2,English,A roadmap designed around you.,A roadmap built around the student,Concrete management deliverable,en.html
+Journey,p,English,"We translate our understanding of your potential into a personalized academic strategy. Together, we define priorities, select the right specialists and resources, and establish clear milestones toward your goals.","We use the assessment to set priorities, select suitable specialists and define measurable milestones for the student.",Concrete management deliverable,en.html
+Journey,h2,English,Turning potential into achievement.,Education with a clear purpose,Concrete management deliverable,en.html
+Journey,p,English,"We bring your strategy to life through expert-led education, personalized mentorship and carefully selected opportunities. ","We coordinate specialist instruction, mentorship and skills development. ",Concrete management deliverable,en.html
+Journey,strong,English,"From developing essential, future-ready skills and preparing for international Olympiads and competitions to engaging in research projects, internships, academic profile development, and securing university admissions and scholarships — every opportunity serves a strategic purpose in your journey.","Olympiads, competitions, research, internships and academic profile development support the roadmap.",Concrete management deliverable,en.html
+Journey,h2,English,Growth with clarity and direction.,Progress you can see,Concrete management deliverable,en.html
+Journey,p,English,"Through continuous mentorship, structured progress reports and regular evaluations, we monitor your development, measure achievements and refine your roadmap as your abilities and ambitions evolve.",Families receive monthly progress reports. We review the roadmap and adjust it based on the student’s performance.,Concrete management deliverable,en.html
+Journey,h2,English,Every achievement opens a new horizon.,Preparing for university and scholarships,Concrete management deliverable,en.html
+Journey,p,English,"We celebrate your achievements and look ahead together. Whether you have reached an academic milestone, earned a scholarship or secured admission to your dream university, we remain by your side as you define your next ambition and build the path toward it.","We plan university choices, entry requirements, application timelines and scholarship opportunities. Admission and scholarships are not guaranteed.",Concrete management deliverable,en.html
+Journey,a btn gold destination-cta,English,Request a Free Consultation,Book a free initial consultation,Consistent consultation wording,en.html
+Footer,span,English,Vellum House | Academic Management,Vellum House | Private Academic Management Office,Positioning / clarity,en.html
+About,h1,English,A team of specialists. One shared vision.,Specialists working to one plan,Positioning / clarity,en.html
+About,p,English,Vellum House was founded on the belief that every student deserves an educational journey as unique as their potential.,Vellum House was founded to manage each student’s education over the long term.,Positioning / clarity,en.html
+About,p,English,"By combining expertise in international education and academic strategy, we transform individual ambitions into structured pathways toward success.",Our experience in international education and academic planning informs the decisions we make with families.,Positioning / clarity,en.html
+About,p bio,English,"Physicist, published researcher and national physics competition medalist. A K. N. Toosi University of Technology graduate, with research collaborations at IPM, Shahid Beheshti University and Texas Tech University, and fully funded offers from top universities in the US and Canada.","Physicist, published researcher and national physics competition medalist. A K. N. Toosi University of Technology graduate, with research collaborations at IPM, Shahid Beheshti University and Texas Tech University, and fully funded offers from universities in the US and Canada.",Evidence / attribution,en.html
+About,p founder-role,English,Co-Founder | AI-Driven Physicist & International Education Strategist,Co-Founder | Physics and AI Researcher & International Education Strategist,Positioning / clarity,en.html
+Booking form,p,English,"Tell us about the student and the decision ahead. After you submit the form, choose an available time for your online meeting.","For families seeking long-term academic management. Existing tutors are welcome. Submit the form and choose a time, with no obligation to enrol.",Booking reassurance and qualification,en.html
+Contact,h2,English,Free online consultation,Book a free initial consultation,Consistent consultation wording,en.html
+Contact,p,English,Discuss your academic goals.,Discuss your child’s academic goals.,Booking reassurance and qualification,en.html
+Language chooser,small,English,Academic Management,Private Academic Management Office,Evidence / attribution; Positioning / clarity,en.html
+Shared / standalone,title,English,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,fa.html
+Metadata,meta @content,فارسی,مدیریت اختصاصی مسیر تحصیلی دانش‌پذیر، از استعدادیابی و آموزش تا رقابت‌های بین‌المللی، پذیرش دانشگاه و بورسیه.,دفتر خصوصی مدیریت مسیر تحصیلی، از ارزیابی و آموزش تا پذیرش دانشگاه و بورسیه. رزرو مشاوره اولیه رایگان.,SEO / share preview,index.html
+Metadata,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview; Positioning / clarity,index.html
+Metadata,meta @content,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview; Positioning / clarity,index.html
+Metadata,meta @content,فارسی,مدیریت اختصاصی مسیر تحصیلی دانش‌پذیر، از استعدادیابی و آموزش تا رقابت‌های بین‌المللی، پذیرش دانشگاه و بورسیه.,دفتر خصوصی مدیریت مسیر تحصیلی، از ارزیابی و آموزش تا پذیرش دانشگاه و بورسیه. رزرو مشاوره اولیه رایگان.,SEO / share preview,index.html
+Header,small,فارسی,Academic Management,Private Academic Management Office,Positioning / clarity,index.html
+Navigation,a,فارسی,درخواست مشاوره,رزرو مشاوره اولیه رایگان,Consistent consultation wording,index.html
+Navigation,a btn gold nav-cta,فارسی,درخواست جلسه مشاوره رایگان اولیه,رزرو مشاوره اولیه رایگان,Consistent consultation wording,index.html
+Header,a @aria-label,فارسی,درخواست جلسه مشاوره رایگان اولیه,رزرو مشاوره اولیه رایگان,Consistent consultation wording,index.html
+Header,a header-consult,فارسی,همین حالا مشاوره رایگان رزرو کنید,رزرو مشاوره اولیه رایگان,Consistent consultation wording,index.html
+Home,h1,فارسی,مدیریت اختصاصی مسیر تحصیلی فرزند شما,مسیر تحصیلی فرزندتان را یکپارچه مدیریت می‌کنیم.,Positioning / clarity,index.html
+Home,p hero-summary,فارسی,وقتی انتخاب درس، کلاس و دانشگاه جدا از هم انجام شود، فرصت‌های مهم از دست می‌رود. در ولوم هاوس، یک تیم از شناخت استعداد تا آمادگی برای پذیرش و بورسیه، این تصمیم‌ها را در یک برنامهٔ شخصی هماهنگ می‌کند.,ولوم هاوس، دفتر خصوصی مدیریت مسیر تحصیلی است؛ از شناخت استعدادها تا ورود به دانشگاه، با برنامه‌ای متناسب با توانمندی‌ها و اهداف فرزندتان.,Positioning / clarity,index.html
+Home,a explore btn gold,فارسی,آشنایی با مسیر دانش‌آموز,مسیر همراهی,Preserve existing navigation destination,index.html
+Home,video @aria-label,فارسی,دانش‌پذیران و مربیان ولوم هاوس در کلاس‌ها و رقابت‌های علمی,دانش‌آموزان و مربیان ولوم هاوس در کلاس‌ها و رقابت‌های علمی,Persian typography,index.html
+Home,span,فارسی,سال تجربه تخصصی در آموزش,سال تجربه آموزشی تیم,Evidence / attribution,index.html
+Home,span,فارسی,دانش‌آموز در سراسر جهان,دانش‌آموز در کارنامه تیم,Evidence / attribution,index.html
+Home,span,فارسی,مدیریت جامع و اختصاصی مسیر تحصیلی,مدیریت جامع مسیر تحصیلی,Evidence / attribution,index.html
+Journey,p,فارسی,برای آشنایی با هر مرحله، یکی از گام‌ها را انتخاب کنید.,همه تصمیم‌های آموزشی در چارچوب یک برنامه. هر مرحله را انتخاب کنید.,Concrete management deliverable,index.html
+Journey,h2,فارسی,هر مسیر موفقی با شناخت آغاز می‌شود.,شناخت، پیش از تصمیم‌گیری,Concrete management deliverable,index.html
+Journey,p,فارسی,نخستین گام ما، شناخت شماست؛ پیشینه تحصیلی، علایق، شرایط، دغدغه‌ها و آرزوهایتان. با هم بررسی می‌کنیم که امروز در کجای مسیر قرار دارید و می‌خواهید به کجا برسید.,با دانش‌آموز و خانواده گفت‌وگو می‌کنیم تا پیشینه تحصیلی، علایق، شرایط و اهداف او را بشناسیم.,Concrete management deliverable,index.html
+Journey,h2,فارسی,کشف توانمندی‌های منحصربه‌فرد شما,شناخت توانمندی‌ها و نیازهای آموزشی,Concrete management deliverable,index.html
+Journey,p,فارسی,با ارزیابی تخصصی و شخصی، استعدادها، نقاط قوت، الگوهای یادگیری و زمینه‌های قابل پیشرفت شما را شناسایی می‌کنیم. فراتر از نمرات، به دنبال شناخت شیوه تفکر، یادگیری و ظرفیت رشد شما هستیم.,با ارزیابی تخصصی، استعدادها، نقاط قوت، شیوه یادگیری و نیازهای آموزشی دانش‌آموز را فراتر از نمرات بررسی می‌کنیم.,Concrete management deliverable,index.html
+Journey,h2,فارسی,نقشه راهی که مختص شماست.,نقشه راهی متناسب با دانش‌آموز,Concrete management deliverable,index.html
+Journey,p,فارسی,بر اساس شناخت به‌دست‌آمده از توانمندی‌ها و اهداف شما، یک مسیر آموزشی اختصاصی طراحی می‌کنیم. اولویت‌ها را مشخص می‌کنیم، متخصصان و منابع مناسب را برمی‌گزینیم و اهداف مرحله‌ای و قابل سنجشی برای رسیدن به اهداف تعیین می‌کنیم.,بر اساس ارزیابی، نقشه راه اختصاصی را تدوین می‌کنیم؛ با اولویت‌های روشن، متخصصان مناسب و هدف‌های قابل سنجش.,Concrete management deliverable,index.html
+Journey,h2,فارسی,از استعداد تا دستاورد,آموزش و فرصت‌های هدفمند,Concrete management deliverable,index.html
+Journey,p,فارسی,نقشه راه شما را با آموزش تخصصی، همراهی مستمر منتورها و انتخاب هوشمندانه فرصت‌ها به اجرا درمی‌آوریم. از کسب مهارت های مهم و به روز، آمادگی برای المپیادها و رقابت‌های بین‌المللی، پروژه‌های پژوهشی و دوره‌های کارآموزی گرفته تا ساخت رزومه آکادمیک، آمادگی برای پذیرش و دریافت بورسیه از دانشگاه‌های برتر جهان؛ هر فعالیت، بخشی هدفمند از مسیر موفقیت شماست.,آموزش تخصصی، منتورینگ، توسعه مهارت‌ها، المپیادها، رقابت‌ها، پژوهش، کارآموزی و ساخت رزومه را متناسب با نقشه راه هماهنگ می‌کنیم.,Concrete management deliverable; Evidence / attribution,index.html
+Journey,h2,فارسی,رشدی هدفمند و قابل سنجش,پیشرفتی قابل ارزیابی,Concrete management deliverable,index.html
+Journey,p,فارسی,با همراهی مستمر، گزارش‌های تخصصی پیشرفت و ارزیابی‌های دوره‌ای، روند رشد شما را بررسی می‌کنیم و متناسب با پیشرفت‌ها، توانمندی‌ها و اهداف جدیدتان، نقشه راه را به‌روزرسانی می‌کنیم.,با گزارش ماهانه، خانواده را از پیشرفت دانش‌آموز آگاه می‌کنیم و بر اساس عملکرد او، برنامه را بازبینی می‌کنیم.,Concrete management deliverable,index.html
+Journey,h2,فارسی,هر موفقیت، آغاز افقی تازه است.,آمادگی برای دانشگاه و بورسیه,Concrete management deliverable,index.html
+Journey,p,فارسی,دستاوردهایتان را در کنار شما جشن می‌گیریم و به فرصت‌های پیش رو می‌اندیشیم. چه به یک موفقیت علمی دست یافته باشید، چه بورسیه تحصیلی گرفته باشید یا وارد دانشگاه رؤیایی خود شده باشید، همچنان در کنارتان هستیم تا هدف بعدی را تعریف کنیم و مسیر رسیدن به آن را بسازیم.,برای انتخاب دانشگاه، شرایط پذیرش، زمان‌بندی درخواست‌ها و فرصت‌های بورسیه برنامه‌ریزی می‌کنیم. پذیرش و بورسیه تضمین‌شده نیست.,Concrete management deliverable,index.html
+Journey,a btn gold destination-cta,فارسی,درخواست جلسه مشاوره رایگان اولیه,رزرو مشاوره اولیه رایگان,Consistent consultation wording,index.html
+Footer,span,فارسی,Vellum House | Academic Management,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,Positioning / clarity,index.html
+About,h1,فارسی,تیمی از متخصصان، چشم‌اندازی مشترک,تیمی از متخصصان، یک برنامه منسجم,Positioning / clarity,index.html
+About,p,فارسی,ولوم هاوس با این باور شکل گرفت که مسیر آموزشی هر دانش‌آموز باید به‌اندازه استعدادها و توانمندی‌های او منحصربه‌فرد باشد.,ولوم هاوس برای مدیریت بلندمدت مسیر تحصیلی هر دانش‌آموز شکل گرفت.,Positioning / clarity,index.html
+About,p,فارسی,با تلفیق تخصص در آموزش بین‌المللی و برنامه‌ریزی راهبردی تحصیلی، آرزوهای دانش‌آموزان را به مسیرهایی هدفمند و منسجم برای رشد و موفقیت تبدیل می‌کنیم.,تخصص ما در آموزش بین‌المللی و طراحی مسیر تحصیلی، پشتوانه تصمیم‌ها و برنامه‌های آموزشی خانواده‌هاست.,Positioning / clarity,index.html
+About,p bio,فارسی,فیزیک‌دان، نویسنده مقالات علمی بین‌المللی، دارنده مدال مسابقات فیزیک‌دانان جوان ایران و دانش‌آموخته دانشگاه صنعتی خواجه نصیرالدین طوسی؛ با سابقه همکاری پژوهشی با پژوهشگاه دانش‌های بنیادی (IPM)، دانشگاه شهید بهشتی و دانشگاه تگزاس آمریکا و دریافت پذیرش با حمایت مالی کامل از دانشگاه‌های برتر آمریکا و کانادا.,فیزیک‌دان، نویسنده مقالات علمی بین‌المللی، دارنده مدال مسابقات فیزیک‌دانان جوان ایران و دانش‌آموخته دانشگاه صنعتی خواجه نصیرالدین طوسی؛ با سابقه همکاری پژوهشی با پژوهشگاه دانش‌های بنیادی (IPM)، دانشگاه شهید بهشتی و دانشگاه تگزاس تک و دریافت پذیرش با حمایت مالی کامل از دانشگاه‌هایی در آمریکا و کانادا.,Evidence / attribution,index.html
+About,strong,فارسی,حوزه تخصصی او شامل نظام‌های آموزشی و دیپلم‌های بین‌المللی، طراحی مسیر تحصیلی، کشف و پرورش استعدادها، المپیادهای علمی، پذیرش و دریافت بورسیه از دانشگاه‌های برتر جهان است.,حوزه تخصصی او شامل نظام‌های آموزشی و دیپلم‌های بین‌المللی، طراحی مسیر تحصیلی، کشف و پرورش استعدادها، المپیادهای علمی، پذیرش و دریافت بورسیه از دانشگاه‌ها است.,Evidence / attribution,index.html
+About,p founder-role,فارسی,بنیان‌گذار | پژوهشگر فیزیک و  هوش مصنوعی، متخصص آموزش بین‌المللی و طراحی مسیر تحصیلی,بنیان‌گذار | پژوهشگر فیزیک و هوش مصنوعی، متخصص آموزش بین‌المللی و طراحی مسیر تحصیلی,Persian typography,index.html
+Booking form,p,فارسی,از وضعیت تحصیلی و هدف دانش‌پذیر برایمان بگویید. پس از ثبت فرم، یک وقت آزاد برای جلسهٔ آنلاین انتخاب کنید.,برای خانواده‌هایی که به دنبال مدیریت بلندمدت مسیر تحصیلی‌اند. داشتن معلم خصوصی مانعی نیست. فرم را تکمیل و وقت جلسه را انتخاب کنید؛ بدون تعهد به ثبت‌نام.,Booking reassurance and qualification; Persian typography,index.html
+Booking form,p parent-note,فارسی,دانش‌پذیران زیر ۱۸ سال همراه با دست‌کم یکی از والدین یا سرپرست خود در جلسه شرکت می‌کنند.,دانش‌آموزان زیر ۱۸ سال همراه با دست‌کم یکی از والدین یا سرپرست خود در جلسه شرکت می‌کنند.,Persian typography,index.html
+Booking form,span,فارسی,نام و نام خانوادگی دانش‌پذیر *,نام و نام خانوادگی دانش‌آموز *,Persian typography,index.html
+Booking form,span,فارسی,شمارهٔ تماس *,شماره تماس *,Persian typography,index.html
+Booking form,span,فارسی,مقطع تحصیلی دانش‌پذیر *,مقطع تحصیلی دانش‌آموز *,Persian typography,index.html
+Contact,h2,فارسی,مشاورهٔ آنلاین رایگان,رزرو مشاوره اولیه رایگان,Consistent consultation wording,index.html
+Contact,p,فارسی,گفت‌وگو درباره هدف‌های تحصیلی‌تان,بررسی شرایط و اهداف تحصیلی فرزندتان,Booking reassurance and qualification,index.html
+Language chooser,small,فارسی,Academic Management,Private Academic Management Office,Positioning / clarity,index.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,journal-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,journal.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,pathways-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,pathways.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,privacy-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,privacy.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,services-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,services.html
+Shared / standalone,title,فارسی,Vellum House,ولوم هاوس | دفتر خصوصی مدیریت مسیر تحصیلی,SEO / share preview,terms-fa.html
+Shared / standalone,title,English,Vellum House,Vellum House | Private Academic Management Office,SEO / share preview,terms.html
